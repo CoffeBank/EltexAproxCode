@@ -1,0 +1,56 @@
+#include "Header.h"
+#include  <windows.h>
+
+MainMenu MENU
+BEGIN
+POPUP "&Файл"
+{
+	MENUITEM "&Открыть" IDM_OPEN
+	MENUITEM SEPARATOR
+	MENUITEM "В&ыход" IDM_EXIT
+}
+POPUP "&Настройки"
+{
+	MENUITEM "&Цвет графика" IDM_COLORGRAPH
+		MENUITEM "Цвет точек" IDM_COLORPOINTS
+		MENUITEM "Отобразить график" IDM_SHOW CHECKED
+		
+
+}
+POPUP "&Справка"
+{
+	MENUITEM "О програме" IDM_ABOUT
+		MENUITEM "Параметры" IDM_OPTIONS
+}
+END
+
+
+ExampleDialog DIALOG DISCARDABLE 100, 100, 170, 130
+CAPTION "Параметры Графика"
+FONT 8 "MS Sans Serif"
+{
+	    LTEXT "y=ax+b",IDC_STATIC, 70, 5 ,30 ,20
+		LTEXT "B-погрешнсть", IDC_STATIC, 70, 30, 50, 20
+		LTEXT "a=", IDC_STATIC, 15, 3, 30, 12
+		EDITTEXT IDC_A, 25, 3, 30, 12
+		LTEXT "b=", IDC_STATIC, 15, 15, 30, 12
+		EDITTEXT IDC_b, 25, 15, 30, 12
+		LTEXT "B=", IDC_STATIC, 15, 28, 30, 12
+		EDITTEXT IDC_B, 25, 28, 30, 12
+	    GROUPBOX "X координаты", IDC_STATIC, 10, 50, 70, 55
+		GROUPBOX "Y координраты", IDC_STATIC, 85, 50, 70, 55
+		LTEXT "Х min:", IDC_STATIC, 15, 60, 50, 12
+		EDITTEXT IDC_EDIT1, 45, 60, 30, 12
+		LTEXT "Х max:", IDC_STATIC, 15, 75, 50, 12
+		EDITTEXT IDC_EDIT2, 45, 75, 30, 12
+		LTEXT "Х step:", IDC_STATIC, 15, 90, 50, 12
+		EDITTEXT IDC_EDIT3, 45, 90, 30, 12
+		LTEXT "Y min:", IDC_STATIC, 90, 60, 50, 12
+		EDITTEXT IDC_EDIT4, 120, 60, 30, 12
+		LTEXT "Y max:", IDC_STATIC, 90, 75, 50, 12
+		EDITTEXT IDC_EDIT5, 120, 75, 30, 12
+		LTEXT "Y step:", IDC_STATIC, 90, 90, 50, 12
+		EDITTEXT IDC_EDIT6, 120, 90, 30, 12
+		DEFPUSHBUTTON "OK", IDOK, 60, 110, 40, 12
+		PUSHBUTTON "Cancel", IDCANCEL, 115, 110, 40, 12
+}
